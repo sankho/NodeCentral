@@ -8,40 +8,24 @@
 /** one port for all **/
 var port = 8124;
 
-/** Vhost definitions go here **/
+/** Vhost definitions go here 
+ *  
+ *  Your appScript must contain a function defined as exports['handle'] which accepts a
+ *  Node.js request and response object. Then do whatever you want!
+ */
 var vhosts = {
     
-    /*
+    //*
     'example.com': {
         appScript : "/Path/To/Script.js",
     },
     //*/
     
-    'protoworks': {
-        appScript : "/Volumes/UserData/Users/smallik/Sites/protoworks/scripts/run.js",
-    },
-    
-    'pretendo': {
-        appScript : "/Volumes/UserData/Users/smallik/Sites/pretendo/scripts/run.js",
-    },
-
-    'local.sankho': {
-        appScript : "/Volumes/UserData/Users/smallik/Sites/local.sankho/scripts/run.js",
-    },
-    
-    /*
-    'game': {
-        appScript : "/Volumes/UserData/Users/smallik/Sites/game/scripts/run.js",
-        webSocket : true,
-    },
-    //*/
-
 }
 
 /** Node stuff below **/
 
 var http = require('http');
-var sys  = require('sys');
 
 var server = http.createServer(function (req, res) {
   
